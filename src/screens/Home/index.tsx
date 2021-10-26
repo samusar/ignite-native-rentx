@@ -2,6 +2,7 @@ import React from 'react';
 import { StatusBar } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize';
 import Logo from '../../assets/logo.svg';
+import { Car } from '../../components/Car';
 
 import { 
   Container,
@@ -11,6 +12,25 @@ import {
 } from './styles';
 
 export function Home() {
+  const carDataOne = {
+    brand: 'AUDI',
+    name: 'RS 5 Coupé',
+    rent: {
+      period: 'AO DIA',
+      price: 120,
+    },
+    thumbnail: 'https://png.monster/wp-content/uploads/2020/11/2018-audi-rs5-4wd-coupe-angular-front-5039562b.png',
+  }
+  const carDataTwo = {
+    brand: 'Porsche',
+    name: 'Panamera',
+    rent: {
+      period: 'AO DIA',
+      price: 340,
+    },
+    thumbnail: 'http://freebiescloud.com/wp-content/uploads/2021/02/PORSCHE-PANAMERA-2021-1.png',
+  }
+
   return (
     <Container>
       <StatusBar
@@ -29,6 +49,9 @@ export function Home() {
           </TotalCars>
         </HeaderContent>
       </Header>
+
+      <Car data={carDataOne} />
+      <Car data={carDataTwo} />
     </Container>
   );
 }
